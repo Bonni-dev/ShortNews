@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "ShortNews"
 include(":app")
+include(":utils")

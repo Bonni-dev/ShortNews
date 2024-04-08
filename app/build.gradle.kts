@@ -65,4 +65,6 @@ dependencies {
 
     debugImplementation(Dependencies.composeUiTestManifest)
     debugImplementation(Dependencies.composeTestJUnit4)
+
+    implementation(Modules.utilities)
 }

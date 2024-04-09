@@ -8,7 +8,7 @@ import retrofit2.http.Query
 interface ApiService {
 
    @GET("v2/top-headlines")
-    fun getNews(
+    suspend fun getNews(
         @Query("country") country: String = "br",
         @Query("apiKey") apiKey: String = "4e3a3e771fc141ac8c382facd27ecf52"
     ) : Response<NewsResponse>

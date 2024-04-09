@@ -1,4 +1,4 @@
-package com.example.shortnews.ui.theme
+package com.example.shortnews.presentation.theme
 
 import android.app.Activity
 import android.os.Build

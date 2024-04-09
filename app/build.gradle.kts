@@ -53,27 +53,29 @@ android {
 
 dependencies {
 
-    implementation(Dependencies.coreKts)
-    implementation(Dependencies.lifecycleRuntimeKtx)
-    implementation(Dependencies.activityCompose)
-    implementation(platform(Dependencies.composeBom))
-    implementation(Dependencies.composeUi)
-    implementation(Dependencies.composeUiGraphics)
-    implementation(Dependencies.composeUiToolingPreview)
-    implementation(Dependencies.composeUiTooling)
-    implementation(Dependencies.composeMaterial3)
-    implementation(Dependencies.navigationCompose)
-    implementation(Dependencies.lifecycleViewModelKtx)
-    implementation(Dependencies.activityKtx)
 
-    implementation(Dependencies.hiltAndroid)
-    kapt(Dependencies.hiltCompiler)
-    kapt(Dependencies.hiltAndroidCompiler)
 
-    debugImplementation(Dependencies.composeUiTestManifest)
-    debugImplementation(Dependencies.composeTestJUnit4)
+    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.activity:activity-compose:1.8.2")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
+    implementation("androidx.compose:compose-bom:2024.04.00")
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.ui:ui-graphics")
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    implementation("androidx.compose.ui:ui-tooling:1.6.5")
+    implementation("androidx.compose.material3:material3:1.2.1")
+    implementation("androidx.navigation:navigation-compose:2.7.7")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation("com.google.dagger:hilt-android:2.48")
+    kapt("com.google.dagger:hilt-android-compiler:2.48")
+    kapt("androidx.hilt:hilt-compiler:1.2.0")
+    implementation("androix.hilt:hilt-navigation-compose:1.0.0")
 
-    implementation(Modules.utilities)
+    debugImplementation("androidx.compose.ui:ui-test-manifest")
+    debugImplementation("androidx.compose.ui:ui-test-junit4:1.6.5")
+
+    implementation(project(Modules.utilities))
 }
 
 kapt {

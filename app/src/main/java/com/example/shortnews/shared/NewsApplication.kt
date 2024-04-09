@@ -1,4 +1,4 @@
-package com.example.shortnews
+package com.example.shortnews.shared
 
 import android.app.Application
 import android.util.Log

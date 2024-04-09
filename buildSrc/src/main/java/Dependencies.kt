@@ -1,7 +1,6 @@
 object Dependencies {
 
     val coreKts by lazy {"androidx.core:core-ktx:${Versions.coreKts}"}
-    val activityKtx by lazy {"androidx.activity:activity-ktx:${Versions.activityKts}"}
     val appcompat by lazy {"androidx.appcompat:appcompat:${Versions.appCompat}"}
     val material by lazy {"com.google.android.material:material:${Versions.material}"}
     val lifecycleRuntimeKtx by lazy {"androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleRuntimeKtx}"}

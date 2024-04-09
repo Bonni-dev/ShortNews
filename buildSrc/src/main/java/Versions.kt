@@ -1,7 +1,6 @@
 object Versions {
 
     val coreKts = {"1.12.0"}
-    val activityKts = {"1.8.2"}
     val appCompat = {"1.6.1"}
     val material = {"1.11.0"}
     val composeBom = {"2023.08.00"}

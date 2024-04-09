@@ -1,9 +1,10 @@
 package com.example.shortnews.di
 
-import com.example.shortnews.data.AppConstants
+import com.example.shortnews.data.AppConstants.BASE_URL
 import com.example.shortnews.data.api.ApiService
 import com.example.shortnews.data.datasource.NewsDataSource
 import com.example.shortnews.data.datasource.NewsDataSourceImpl
+import com.example.shortnews.data.repository.NewsRepository
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -23,7 +24,7 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun providesRetrofit() : Retrofit{
+    fun providesRetrofit(): Retrofit {
         val httpLoggingInterceptor = HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BASIC
         }
@@ -31,12 +32,12 @@ class AppModule {
             addInterceptor(httpLoggingInterceptor)
         }
         httpClient.apply {
-            readTimeout(60,TimeUnit.SECONDS)
+            readTimeout(60, TimeUnit.SECONDS)
         }
         val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
 
         return Retrofit.Builder()
-            .baseUrl(AppConstants.BASE_URL)
+            .baseUrl(BASE_URL)
             .client(httpClient.build())
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
@@ -44,7 +45,7 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun providesApiService(retrofit: Retrofit): ApiService{
+    fun providesApiService(retrofit: Retrofit): ApiService {
         return retrofit.create(ApiService::class.java)
     }
 
@@ -53,4 +54,11 @@ class AppModule {
     fun providesNewsDataSource(apiService: ApiService): NewsDataSource {
         return NewsDataSourceImpl(apiService)
     }
+
+    @Provides
+    @Singleton
+    fun providesNewsRepository(newsDataSource: NewsDataSource): NewsRepository {
+        return NewsRepository(newsDataSource)
+    }
+
 }

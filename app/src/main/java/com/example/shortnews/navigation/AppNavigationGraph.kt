@@ -14,7 +14,7 @@ fun AppNavigationGraph() {
     NavHost(navController = navController, startDestination = Routes.HOME_SCREEN) {
 
         composable(Routes.HOME_SCREEN) {
-            HomeScreen(NewsViewModel())
+            HomeScreen()
         }
     }
 }

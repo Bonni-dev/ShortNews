@@ -28,7 +28,7 @@ class NewsViewModel @Inject constructor(
     }
 
     private fun getNews(country: String) {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch() {
             newsRepository.getNewsHeadline(country)
                 .collectLatest { newsResponse ->
                     _news.value = newsResponse

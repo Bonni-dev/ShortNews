@@ -34,7 +34,7 @@ android {
 
 dependencies {
 
-    implementation(Dependencies.coreKts)
-    implementation(Dependencies.appcompat)
-    implementation(Dependencies.material)
+//    implementation(Dependencies.coreKts)
+//    implementation(Dependencies.appcompat)
+//    implementation(Dependencies.material)
 }

@@ -85,6 +85,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 
     implementation("androidx.core:core-splashscreen:1.0.1")
+    implementation("io.coil-kt:coil-compose:2.2.0")
 
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     debugImplementation("androidx.compose.ui:ui-test-junit4:1.6.5")

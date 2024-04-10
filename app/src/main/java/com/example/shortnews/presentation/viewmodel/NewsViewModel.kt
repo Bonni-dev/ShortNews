@@ -7,7 +7,6 @@ import com.example.shortnews.data.entity.NewsResponse
 import com.example.shortnews.data.repository.NewsRepository
 import com.example.utils.ResourceState
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest
